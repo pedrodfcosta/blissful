@@ -1,21 +1,24 @@
 <h3 class="list-hd">List of Questions</h3>
-<br><br>
-<div class="row align-items-center mx-auto list-hr" ng-repeat="question in questions">
-    <h6 class="col-sm-12">
-        <ol><li>{{ question.question }}</li></ol>
+<div class="row align-items-center mx-auto list-hr" ng-repeat="question in questions | filter:searchResults">
+    <h6 class="col-12 mt-3" ng-click="viewQuestion(question)">
+        {{ question.id }} - {{ question.question }}
     </h6>
 
     <div class="col-sm-6">
         <div ng-repeat="choice in question.choices">
-            <p>{{ choice.choice }} - {{ choice.votes }} votes</p>
+            <p class="mt-2 mb-1">{{ choice.choice }}</p>
+            <uib-progress max="2048">
+                <uib-bar value="choice.votes"><span>{{ choice.votes }}</span></uib-bar>
+            </uib-progress>
         </div>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-6 text-center mt-3">
+        <p>View graphical votation</p>
         <a href="{{ question.image_url }}" target="_blank">
             <img src="{{ question.thumb_url }}" alt="">
         </a>
     </div>
-    <p class="col-sm-12">Published at {{ question.published_at }}</p>
+    <p class="col-sm-12 mt-3"><em>Published at {{ question.published_at | date:'MMM dd, yyyy - hh:mm:ss' }}</em></p>
     <div class="clearfix"></div>
-    <hr>
+    <hr class="col-sm-2 mr-1"><span class="separator">//</span><hr class="col-sm-2 ml-1">
 </div>

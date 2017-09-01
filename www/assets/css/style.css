@@ -6,8 +6,21 @@ body {
     font-family: 'Roboto', sans-serif;
     background-color: #fff;
 }
+section.container {
+    min-height: calc(100vh - 152px); /* 152 = nav paddings (15+15) + logo height (62) + footer height (60) */
+}
+nav h1 {
+    margin: 0;
+    padding: 15px 0;
+}
+.footer {
+    height: 60px;
+    line-height: 60px;
+    background-color: #e9ecef;
+}
+/* LOADING SCREEN */
 .loading {
-    height: 100vh;
+    height: calc(100vh - 152px);
 }
 .loading img {
     position: absolute;
@@ -40,3 +53,31 @@ body {
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+/* QUESTIONS SCREEN */
+.list-hd {
+    border: 1px solid;
+    display: inline-block;
+    padding: 2px;
+}
+.list-hr hr {
+    border-top: 1px solid rgba(0,0,0,.3);
+    margin: 2rem auto;
+}
+.separator {
+    color:rgba(0,0,0,.5);
+}
+.list-hr:last-of-type hr, .list-hr:last-of-type span {
+    display: none;
+}
+.search {
+    float: right;
+}
+.search input {
+    border: 0;
+    outline: 0;
+    padding: 2px;
+    line-height: 1.75rem;
+    font-size: 1.25rem;
+    border-bottom: 1px solid;
+}
