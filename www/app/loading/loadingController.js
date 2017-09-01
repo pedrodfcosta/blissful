@@ -4,6 +4,7 @@ app.controller('LoadingController', function($scope, $http, $timeout, $state) {
 
     $scope.isLoading = true;
     $scope.showRetry = false;
+    $scope.showNOKMessage = false;
 
     let getQuestions = () => {
         $timeout(() => {
@@ -11,6 +12,10 @@ app.controller('LoadingController', function($scope, $http, $timeout, $state) {
                 if(result.status === 200) {
                     console.log("Status", result.status);
                     $state.go("questions");
+                } else if(result.status === 503) {
+                    $scope.statusText = result.statusText;
+                    $scope.showRetry = true;
+                    $scope.showNOKMessage = true;
                 } else {
                     $scope.showRetry = true;
                 }
@@ -22,6 +27,7 @@ app.controller('LoadingController', function($scope, $http, $timeout, $state) {
 
     $scope.retryAction = () => {
         $scope.showRetry = false;
+        $scope.showNOKMessage = false;
         getQuestions();
     }
 
