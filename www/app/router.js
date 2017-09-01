@@ -7,7 +7,12 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider
         .state('loading', {
             url: "",
-            templateUrl: "app/loading.html",
+            templateUrl: "app/loading/loading.html",
             controller: "LoadingController"
+        })
+        .state('questions', {
+            url: "",
+            templateUrl: "app/questions/questions.html",
+            controller: "QuestionsController"
         });
 });
