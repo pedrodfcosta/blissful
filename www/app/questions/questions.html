@@ -1,4 +1,9 @@
 <h3 class="list-hd">List of Questions</h3>
+<h3 class="search">
+    <input type="search" placeholder="Seach results" ng-model="searchResults">
+</h3>
+<br><br>
+<div class="clearfix"></div>
 <div class="row align-items-center mx-auto list-hr" ng-repeat="question in questions | filter:searchResults">
     <h6 class="col-12 mt-3" ng-click="viewQuestion(question)">
         {{ question.id }} - {{ question.question }}
