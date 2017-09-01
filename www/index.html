@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <!-- Meta tags -->
+    <meta charset="utf-8" />
+    <title>Blissful App</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png" sizes="16x16">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700">
+</head>
+
+<body>
+    <nav>
+        <h1 class="text-center">
+                <img src="assets/img/logo.png" alt="bliss logo" />
+            </h1>
+    </nav>
+
+    <section class="container" ui-view></section>
+
+    <div ng-if="retry">
+        <h3>Retry Action</h3>
+    </div>
+
+    <!-- Libs -->
+    <script src="../node_modules/angular/angular.min.js"></script>
+    <script src="../node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <!-- Modules -->
+    <script type="text/javascript" src="app/app.js"></script>
+    <script type="text/javascript" src="app/router.js"></script>
+    <!-- Components -->
+    <script type="text/javascript" src="app/loadingController.js"></script>
+</body>
+
+</html>

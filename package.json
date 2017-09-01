@@ -1,0 +1,25 @@
+{
+  "name": "blissful",
+  "version": "1.0.0",
+  "description": "Bliss Recruitment App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pedrodfcosta/blissful.git"
+  },
+  "author": "Pedro Costa (pedrodfcosta)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pedrodfcosta/blissful/issues"
+  },
+  "homepage": "https://github.com/pedrodfcosta/blissful#readme",
+  "dependencies": {
+    "@uirouter/angularjs": "^1.0.3",
+    "angular": "^1.6.6",
+    "bootstrap": "^4.0.0-beta",
+    "font-awesome": "^4.7.0"
+  }
+}
