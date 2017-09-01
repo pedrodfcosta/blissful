@@ -17,17 +17,13 @@
 </head>
 
 <body>
-    <nav ng-show="!isLoading">
+    <nav>
         <h1 class="text-center">
-                <img src="assets/img/logo.png" alt="bliss logo" />
-            </h1>
+            <img src="assets/img/logo.png" alt="bliss logo" />
+        </h1>
     </nav>
 
     <section class="container" ui-view></section>
-
-    <div ng-if="retry">
-        <h3>Retry Action</h3>
-    </div>
 
     <footer class="footer">
         <div class="container">

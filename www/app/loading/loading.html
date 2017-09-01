@@ -1,5 +1,10 @@
 <div class="loading">
-    <img src="assets/img/loading_logo.png" alt="bliss logo" />
+    <img class="mitm" src="assets/img/loading_logo.png" alt="bliss logo" />
     <br/>
-    <p class="spinner"><i class="fa fa-spinner" aria-hidden="true"></i></p>
+    <p class="mitm spinner" ng-class={'stop-spinner':showRetry}>
+        <i class="fa fa-spinner" aria-hidden="true"></i>
+        <br>
+        <span ng-show="showRetry">Can't connect to server. Please try again!</span>
+    </p>
+    <button type="button" name="retry" class="mitm btn btn-warning" ng-show="showRetry" ng-click="retryAction()">Retry Action</button>
 </div>
