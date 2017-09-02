@@ -109,3 +109,13 @@ nav img {
     display: block;
     margin: auto;
 }
+.radio-vote {
+    position: absolute;
+    left: -18px;
+    margin-top: -42px;
+}
+.radio-vote input {
+    cursor: pointer;
+    height: 25px;
+    width: 25px;
+}

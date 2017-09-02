@@ -5,7 +5,6 @@ app.controller('ShareController', function($scope, $stateParams, $http, $timeout
     $scope.urlShared = false;
     $scope.notSending = true;
     $scope.showNOKMessage = false;
-    $scope.showOtherNOKMessage = false;
 
     $scope.destinationEmail = undefined;
     $scope.clickedQuestion = $stateParams.clickedQuestion;
@@ -22,8 +21,6 @@ app.controller('ShareController', function($scope, $stateParams, $http, $timeout
                 } else if(result.status === 400) {
                     $scope.statusText = result.statusText;
                     $scope.showNOKMessage = true;
-                } else {
-                    $scope.showOtherNOKMessage = true;
                 }
                 $scope.notSending = true;
             });
@@ -34,7 +31,6 @@ app.controller('ShareController', function($scope, $stateParams, $http, $timeout
         $scope.urlShared = false;
         $scope.notSending = false;
         $scope.showNOKMessage = false;
-        $scope.showOtherNOKMessage = false;
         shareToEmail();
     }
 });

@@ -1,26 +1,40 @@
 <h4 class="list-hd">Details of Question {{ clickedQuestion }}</h4>
 <div class="clearfix"></div>
-<div class="row align-items-center mx-auto list-hr">
+<div class="row align-items-center mx-auto">
     <h6 class="col-sm-12 mt-3">
         {{ question.question }}
     </h6>
     <div class="col-sm-6">
         <div ng-repeat="choice in question.choices">
-            <p class="mt-2 mb-1">{{ choice.choice }}</p>
+            <p class="mt-3 mb-1">{{ choice.choice }}</p>
             <uib-progress max="2048">
                 <uib-bar value="choice.votes"><span>{{ choice.votes }}</span></uib-bar>
             </uib-progress>
+            <div class="radio-vote" data-toggle="buttons">
+                <label class="">
+                    <input type="radio" name="options" id="{{choice.choice}}" ng-click="selectedAnswer(choice)">
+                </label>
+            </div>
         </div>
     </div>
     <div class="col-sm-6 text-center mt-3">
         <p>View graphical votation</p>
         <a href="{{ question.image_url }}" target="_blank">
-        <img src="{{ question.thumb_url }}" alt="">
-    </a>
+            <img src="{{ question.thumb_url }}" alt="">
+        </a>
     </div>
     <p class="col-sm-12 mt-3"><em>Published at {{ question.published_at | date:'MMM dd, yyyy - hh:mm:ss' }}</em></p>
     <div class="col-sm-6 text-right">
+        <button type="button" name="share" class="btn btn-success pull-left" ng-click="vote(choice)">Vote</button>
         <button type="button" name="share" class="btn btn-primary" ng-click="share(clickedQuestion, question)">Share</button>
         <button type="button" name="return" class="btn btn-secondary" ui-sref="questions">Return</button>
+        <br>
+        <p class="col-sm-12 mt-3 pl-0 text-left spinner">
+            <span ng-show="voting"><em>Voting... </em></span>
+            <span ng-show="successMessage"><em>Voted successfully! </em></span>
+            <span ng-show="showNOKMessage"><em>{{ statusText }} </em></span>
+            <i class="fa fa-spinner" aria-hidden="true" ng-show="voting"></i>
+        </p>
+        <br>
     </div>
 </div>
