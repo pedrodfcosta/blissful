@@ -68,8 +68,6 @@ nav img {
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
-
-
 /* QUESTIONS SCREEN */
 .list-hd {
     border: 1px solid;
@@ -104,4 +102,8 @@ nav img {
     line-height: 1.75rem;
     font-size: 1.25rem;
     border-bottom: 1px solid;
+}
+.load-records {
+    display: block;
+    margin: auto;
 }
