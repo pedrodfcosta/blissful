@@ -21,7 +21,7 @@ app.controller('LoadingController', function($scope, $http, $timeout, $state) {
                     $scope.showRetry = true;
                 }
             });
-        }, 500);
+        }, 3000);
     }
     getQuestions();
 
