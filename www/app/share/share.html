@@ -1,0 +1,17 @@
+<h4 class="list-hd">Share URL → Question {{ clickedQuestion }}</h4>
+<div class="clearfix"></div>
+<div class="loading">
+    <br><br>
+    <p>Please type the email to share this question.</p>
+    <p><input type="email" placeholder="Email" name="email" ng-model="destinationEmail" ng-blur="validateEmail()"></p>
+    <p class="spinner" ng-show="!notSending">
+        <i class="fa fa-spinner" aria-hidden="true"></i>
+        <br>
+        <p ng-show="!showNOKMessage">{{ statusText }}</p>
+        <p ng-show="showOtherNOKMessage">Sorry! There was some problem sharing this. Please try again soon.</p>
+        <p ng-show="urlShared">Congratulations! The url was successfully shared.</p>
+    </p>
+    <br>
+    <button type="button" name="retry" class="btn btn-primary" ng-click="share()">Share URL</button>
+    <button type="button" name="return" class="btn btn-secondary" ui-sref="details({clickedQuestion:clickedQuestion, question:question})">Return</button>
+</div>
