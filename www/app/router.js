@@ -23,5 +23,14 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             },
             templateUrl: 'app/details/details.html',
             controller: "DetailsController"
+        })
+        .state('share', {
+            url: "",
+            params: {
+                clickedQuestion: undefined,
+                question: undefined
+            },
+            templateUrl: 'app/share/share.html',
+            controller: "ShareController"
         });
 });

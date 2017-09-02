@@ -1,7 +1,7 @@
 <h4 class="list-hd">Details of Question {{ clickedQuestion }}</h4>
 <div class="clearfix"></div>
 <div class="row align-items-center mx-auto list-hr">
-    <h6 class="col-12 mt-3">
+    <h6 class="col-sm-12 mt-3">
         {{ question.question }}
     </h6>
     <div class="col-sm-6">
@@ -19,7 +19,8 @@
     </a>
     </div>
     <p class="col-sm-12 mt-3"><em>Published at {{ question.published_at | date:'MMM dd, yyyy - hh:mm:ss' }}</em></p>
-    <div class="col-6 text-right">
-        <button type="button" name="retry" class="btn btn-secondary" ui-sref="questions">Return</button>
+    <div class="col-sm-6 text-right">
+        <button type="button" name="share" class="btn btn-primary" ng-click="share(clickedQuestion, question)">Share</button>
+        <button type="button" name="return" class="btn btn-secondary" ui-sref="questions">Return</button>
     </div>
 </div>

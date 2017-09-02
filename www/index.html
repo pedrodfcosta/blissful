@@ -18,8 +18,8 @@
 
 <body>
     <nav>
-        <h1 class="text-center">
-            <img src="assets/img/logo.png" alt="bliss logo" />
+        <h1 class="text-center" ng-controller="LoadingController">
+            <img src="assets/img/logo.png" alt="bliss logo" ng-if="!isLoading" />
         </h1>
     </nav>
 
@@ -44,6 +44,7 @@
     <script type="text/javascript" src="app/loading/loadingController.js"></script>
     <script type="text/javascript" src="app/questions/questionsController.js"></script>
     <script type="text/javascript" src="app/details/detailsController.js"></script>
+    <script type="text/javascript" src="app/share/shareController.js"></script>
 </body>
 
 </html>

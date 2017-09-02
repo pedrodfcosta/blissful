@@ -7,9 +7,10 @@ body {
     background-color: #fff;
 }
 section.container {
-    min-height: calc(100vh - 150px); /* 152 = nav paddings (15+15) + logo height (60) + footer height (60) */
+    min-height: calc(100vh - 150px); /* 150 = nav height (90) + footer height (60) */
 }
 nav h1 {
+    height: 90px;
     margin: 0;
     padding: 15px 0;
 }
@@ -45,6 +46,7 @@ nav img {
     width: 50%;
     text-align: center;
     color: #222;
+    margin: auto;
 }
 .spinner .fa-spinner {
     -webkit-animation: spin 1s infinite linear;

@@ -11,6 +11,7 @@ app.controller('LoadingController', function($scope, $http, $timeout, $state) {
             $http.get("https://private-anon-fc1b5cfd0c-blissrecruitmentapi.apiary-mock.com/health").then(function(result) {
                 if(result.status === 200) {
                     console.log("Status", result.status);
+                    $scope.isLoading = false;
                     $state.go("questions");
                 } else if(result.status === 503) {
                     $scope.statusText = result.statusText;
@@ -19,9 +20,8 @@ app.controller('LoadingController', function($scope, $http, $timeout, $state) {
                 } else {
                     $scope.showRetry = true;
                 }
-                $scope.isLoading = false;
             });
-        }, 3000);
+        }, 500);
     }
     getQuestions();
 
