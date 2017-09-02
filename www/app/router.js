@@ -14,5 +14,14 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             url: "",
             templateUrl: "app/questions/questions.html",
             controller: "QuestionsController"
+        })
+        .state('details', {
+            url: "",
+            params: {
+                clickedQuestion: undefined,
+                question: undefined
+            },
+            templateUrl: 'app/details/details.html',
+            controller: "DetailsController"
         });
 });

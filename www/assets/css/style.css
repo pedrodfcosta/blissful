@@ -39,7 +39,6 @@ nav img {
 }
 .loading button {
     top: 70%;
-    cursor: pointer;
 }
 .loading .spinner {
     top: 60%;
@@ -77,15 +76,23 @@ nav img {
     display: inline-block;
     padding: 2px;
 }
+.list-hr h6 {
+    cursor: pointer;
+    margin: 0;
+    padding: 5px 0;
+}
 .list-hr hr {
     border-top: 1px solid rgba(0,0,0,.3);
-    margin: 2rem auto;
+    margin: 0;
 }
 .separator {
     color:rgba(0,0,0,.5);
 }
 .list-hr:last-of-type hr, .list-hr:last-of-type span {
     display: none;
+}
+.list-hr:last-of-type h6 {
+    margin-bottom: 20px;
 }
 .search {
     float: right;

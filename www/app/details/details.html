@@ -1,0 +1,25 @@
+<h4 class="list-hd">Details of Question {{ clickedQuestion }}</h4>
+<div class="clearfix"></div>
+<div class="row align-items-center mx-auto list-hr">
+    <h6 class="col-12 mt-3">
+        {{ question.question }}
+    </h6>
+    <div class="col-sm-6">
+        <div ng-repeat="choice in question.choices">
+            <p class="mt-2 mb-1">{{ choice.choice }}</p>
+            <uib-progress max="2048">
+                <uib-bar value="choice.votes"><span>{{ choice.votes }}</span></uib-bar>
+            </uib-progress>
+        </div>
+    </div>
+    <div class="col-sm-6 text-center mt-3">
+        <p>View graphical votation</p>
+        <a href="{{ question.image_url }}" target="_blank">
+        <img src="{{ question.thumb_url }}" alt="">
+    </a>
+    </div>
+    <p class="col-sm-12 mt-3"><em>Published at {{ question.published_at | date:'MMM dd, yyyy - hh:mm:ss' }}</em></p>
+    <div class="col-6 text-right">
+        <button type="button" name="retry" class="btn btn-secondary" ui-sref="questions">Return</button>
+    </div>
+</div>
